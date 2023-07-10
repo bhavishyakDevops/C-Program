@@ -2,19 +2,25 @@
 #include<stdlib.h>
 void main()
 {
-  int i,n,sum=0;
-  system("clear");
-  do
+const int maxInput=10;
+double number,avg,sum=0.0;
+int i;
+system("clear");
+for(i=1;i<=maxInput;++i)
 {
- printf("\n enter range of numbers");
- scanf("%d",&n);
-}while(n<=0);
-
- for(i=1;i<=n;i++)
+    printf("\n %d enter a number: ",i);
+scanf("%lf",&number);
+if(number<0.0)
 {
- sum+=i;
-
-printf("\n %d",sum);
+    goto jump;
+    
 }
 
+sum+=number;
 }
+jump:
+avg=sum/(i-1);
+printf("\n sum=%.2f\n",sum);
+printf("\n average= %.2f\n\n",avg);
+}
+
